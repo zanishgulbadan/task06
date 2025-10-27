@@ -38,12 +38,21 @@
             width: 100%;
             text-align: center;
         }
+
+
+
+
+
+        .card {
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
     </style>
 </head>
 
 <body>
     <div class="containor   d-grid">
-        <div class="converter-box mb-3 mt-5">
+        <div class="converter-box mb-4 mt-4">
             <h3 class="mb-4 text-primary">1 Age to Days Converter</h3>
             <div class="mb-3">
                 <label for="ageInput" class="form-label fw-semibold">Enter your age (in years):</label>
@@ -56,7 +65,7 @@
         </div>
 
 
-        <div class="converter-box mb-3">
+        <div class="converter-box mb-4">
             <h3 class="mb-4 text-primary"> 2 Hours to Seconds Converter</h3>
             <div class="mb-3">
                 <label for="hourInput" class="form-label fw-semibold">Enter time (in hours):</label>
@@ -71,11 +80,11 @@
 
 
 
-        <div class="converter-box text-center">
-            <h3 class="mb-4 text-primary"> 3 Next Number Finder</h3>
+        <div class="converter-box text-center mb-4">
+            <h3 class="mb-2 text-primary"> 3 Next Number Finder</h3>
 
             <!-- SCENARIO 1 -->
-            <div class="mb-4">
+            <div class="mb-1">
                 <h5 class="text-success">Scenario 1: Find Next Number in an Array</h5>
                 <p class="text-muted small mb-2">Array = [3, 6, 9, 12, 15]</p>
                 <input type="number" id="arrayInput" class="form-control mb-2" placeholder="Enter a number from array">
@@ -94,6 +103,75 @@
                 <p id="userResult" class="mt-2 fw-bold"></p>
             </div>
         </div>
+
+
+
+   <div class="converter-box text-center mb-4">
+      <h3 class="text-center text-primary mb-1">Name Capitalizer</h3>
+      <p class="text-center text-muted">Enter your name in lowercase to see it capitalized.</p>
+
+      <div class="mb-3">
+        <input type="text" id="nameInput" class="form-control" placeholder="Enter your name in lowercase">
+      </div>
+
+      <div class="d-grid">
+        <button onclick="capitalizeName()" class="btn btn-success">Capitalize Name</button>
+      </div>
+
+      <p id="result" class="text-center fw-bold mt-4"></p>
+    </div>
+
+
+
+
+   
+    <div class="converter-box text-center mb-4">
+      <h3 class="text-center text-primary mb-3">BMI Calculator</h3>
+      <p class="text-center text-muted">Enter your weight (kg) and height (meters) to calculate your BMI.</p>
+
+      <div class="mb-3">
+        <input type="number" id="weight" class="form-control" placeholder="Enter your weight (kg)">
+      </div>
+
+      <div class="mb-3">
+        <input type="number" id="height" class="form-control" placeholder="Enter your height (m)">
+      </div>
+
+      <div class="d-grid">
+        <button onclick="calculateBMI()" class="btn btn-success">Calculate BMI</button>
+      </div>
+
+      <p id="bmiResult" class="text-center fw-bold mt-4"></p>
+    </div>
+  
+  
+
+
+
+    <div class="converter-box text-center mb-4">
+      <h3 class="text-center text-primary mb-3">Random Array Picker</h3>
+      <p class="text-center text-muted">Generate a random array and find its first and last elements.</p>
+
+      <div class="d-grid gap-2">
+        <button onclick="generateArray()" class="btn btn-primary">Generate Random Array</button>
+        <button onclick="pickElements()" class="btn btn-success">Pick 1st & Last Element</button>
+      </div>
+
+      <div class="mt-4">
+        <p><strong>Generated Array:</strong></p>
+        <p id="arrayDisplay" class="text-secondary">No array generated yet.</p>
+      </div>
+
+      <div class="mt-3">
+        <p id="resultarray" class="fw-bold text-center text-success"></p>
+      </div>
+    </div>
+ 
+
+
+
+
+
 
  </div>
 
@@ -185,6 +263,99 @@
                     result.className = "text-success fw-bold";
                 }
             }
+
+
+
+
+
+function capitalizeName() {
+      const name = document.getElementById('nameInput').value.trim();
+      const result = document.getElementById('result');
+
+      if (name === "") {
+        result.innerHTML = " Please enter your name.";
+        result.className = "text-danger fw-bold text-center";
+      } else {
+        const capitalized = name.charAt(0).toUpperCase() + name.slice(1);
+        result.innerHTML = ` Your name is: <strong>${capitalized}</strong>`;
+        result.className = "text-success fw-bold text-center";
+      }
+    }
+
+
+
+
+
+
+
+function calculateBMI() {
+      const weight = parseFloat(document.getElementById('weight').value);
+      const height = parseFloat(document.getElementById('height').value);
+      const result = document.getElementById('bmiResult');
+
+      if (!weight || !height || weight <= 0 || height <= 0) {
+        result.innerHTML = " Please enter valid values for weight and height.";
+        result.className = "text-danger fw-bold text-center";
+        return;
+      }
+
+      const bmi = (weight / (height * height)).toFixed(2);
+      let category = "";
+
+      if (bmi < 18.5) category = "Underweight ";
+      else if (bmi < 24.9) category = "Normal weight ";
+      else if (bmi < 29.9) category = "Overweight ";
+      else category = "Obese ";
+
+      result.innerHTML = `Your BMI is <strong>${bmi}</strong> (${category})`;
+      result.className = "text-success fw-bold text-center";
+    }
+
+
+
+
+
+
+
+
+
+let randomArray = [];
+
+    // Function to generate a random array of numbers
+    function generateArray() {
+      randomArray = [];
+      const size = Math.floor(Math.random() * 6) + 5; // random size between 5–10
+      for (let i = 0; i < size; i++) {
+        randomArray.push(Math.floor(Math.random() * 100)); // random number 0–99
+      }
+      document.getElementById("arrayDisplay").innerHTML = "[" + randomArray.join(", ") + "]";
+      document.getElementById("resultarray").innerHTML = "";
+    }
+
+    // Function to pick first and last elements
+    function pickElements() {
+      const result = document.getElementById("resultarray");
+      if (randomArray.length === 0) {
+        result.innerHTML = " Please generate an array first!";
+        result.className = "text-danger fw-bold text-center";
+        return;
+      }
+
+      const first = randomArray[0];
+      const last = randomArray[randomArray.length - 1];
+      result.innerHTML = `First Element: <strong>${first}</strong> | Last Element: <strong>${last}</strong>`;
+      result.className = "text-success fw-bold text-center";
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 
