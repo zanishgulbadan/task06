@@ -2,111 +2,123 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Age to Days Converter</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background: rgb(152, 152, 202);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: auto;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Age to Days Converter</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: rgb(152, 152, 202);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+    }
 
-        .converter-box {
-            background: #d5dcdd;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            max-width: 400px;
-            width: 100%;
-            text-align: center;
-        }
-
-
-
-
-
-        .converter-box {
-            background: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            max-width: 400px;
-            width: 100%;
-            text-align: center;
-        }
+    .converter-box {
+      background: #d5dcdd;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
 
 
 
 
 
-        .card {
+    .converter-box {
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+
+
+
+
+
+    .card {
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
-    </style>
+  </style>
 </head>
 
 <body>
-    <div class="containor   d-grid">
-        <div class="converter-box mb-4 mt-4">
-            <h3 class="mb-4 text-primary">1 Age to Days Converter</h3>
-            <div class="mb-3">
-                <label for="ageInput" class="form-label fw-semibold">Enter your age (in years):</label>
-                <input type="number" class="form-control" id="ageInput" placeholder="e.g. 25">
-            </div>
-            <button class="btn btn-primary w-100" onclick="convertToDays()">Convert</button>
-            <div class="mt-3">
-                <h5 id="result1" class="text-success"></h5>
-            </div>
-        </div>
+  <div class="containor   d-grid">
+    <div class="converter-box mb-4 mt-4">
+      <h3 class="mb-4 text-primary">1 Age to Days Converter</h3>
+      <div class="mb-3">
+        <label for="ageInput" class="form-label fw-semibold">Enter your age (in years):</label>
+        <input type="number" class="form-control" id="ageInput" placeholder="e.g. 25">
+      </div>
+      <button class="btn btn-primary w-100" onclick="convertToDays()">Convert</button>
+      <div class="mt-3">
+        <h5 id="result1" class="text-success"></h5>
+      </div>
+    </div>
 
 
-        <div class="converter-box mb-4">
-            <h3 class="mb-4 text-primary"> 2 Hours to Seconds Converter</h3>
-            <div class="mb-3">
-                <label for="hourInput" class="form-label fw-semibold">Enter time (in hours):</label>
-                <input type="number" class="form-control" id="hourInput" placeholder="e.g. 5">
-            </div>
-            <button class="btn btn-primary w-100" onclick="convertToSeconds()">Convert</button>
-            <div class="mt-3">
-                <h5 id="result2" class="text-success"></h5>
-            </div>
-        </div>
-
-
-
-
-        <div class="converter-box text-center mb-4">
-            <h3 class="mb-2 text-primary"> 3 Next Number Finder</h3>
-
-            <!-- SCENARIO 1 -->
-            <div class="mb-1">
-                <h5 class="text-success">Scenario 1: Find Next Number in an Array</h5>
-                <p class="text-muted small mb-2">Array = [3, 6, 9, 12, 15]</p>
-                <input type="number" id="arrayInput" class="form-control mb-2" placeholder="Enter a number from array">
-                <button class="btn btn-outline-primary w-100" onclick="findNextInArray()">Find Next in Array</button>
-                <p id="arrayResult" class="mt-2 fw-bold"></p>
-            </div>
-
-            <hr>
-
-            <!-- SCENARIO 2 -->
-            <div>
-                <h5 class="text-success">Scenario 2: Next Number for Any Value</h5>
-                <input type="number" step="any" id="userInput" class="form-control mb-2"
-                    placeholder="Enter integer or float">
-                <button class="btn btn-outline-success w-100" onclick="findNextNumber()">Find Next Number</button>
-                <p id="userResult" class="mt-2 fw-bold"></p>
-            </div>
-        </div>
+    <div class="converter-box mb-4">
+      <h3 class="mb-4 text-primary"> 2 Hours to Seconds Converter</h3>
+      <div class="mb-3">
+        <label for="hourInput" class="form-label fw-semibold">Enter time (in hours):</label>
+        <input type="number" class="form-control" id="hourInput" placeholder="e.g. 5">
+      </div>
+      <button class="btn btn-primary w-100" onclick="convertToSeconds()">Convert</button>
+      <div class="mt-3">
+        <h5 id="result2" class="text-success"></h5>
+      </div>
+    </div>
 
 
 
-   <div class="converter-box text-center mb-4">
+
+    <div class="converter-box text-center mb-4">
+      <h3 class="mb-3 text-primary">Next Number Finder</h3>
+      <p class="text-muted small">Enter any array and a number from that array to find the next number.</p>
+
+      <!-- Input for array -->
+      <div class="mb-3">
+        <input type="text" id="arrayInput" class="form-control"
+          placeholder="Enter array elements separated by commas (e.g. 2, 4, 5, 6, 11, 14, 45)">
+      </div>
+
+      <!-- Input for number -->
+      <div class="mb-3">
+        <input type="number" id="numberInput" class="form-control" placeholder="Enter a number from the array">
+      </div>
+
+      <!-- Button -->
+      <div class="d-grid mb-3">
+        <button class="btn btn-outline-primary" onclick="findNextInUserArray()">Find Next Number</button>
+      </div>
+
+      <!-- Result -->
+      <p id="resultfinal" class="fw-bold mt-3"></p>
+
+
+
+      <hr>
+
+      <!-- SCENARIO 2 -->
+      <div>
+        <h5 class="text-success">Scenario 2: Next Number for Any Value</h5>
+        <input type="number" step="any" id="userInput" class="form-control mb-2" placeholder="Enter integer or float">
+        <button class="btn btn-outline-success w-100" onclick="findNextNumber()">Find Next Number</button>
+        <p id="userResult" class="mt-2 fw-bold"></p>
+      </div>
+    </div>
+
+
+
+    <div class="converter-box text-center mb-4">
       <h3 class="text-center text-primary mb-1">Name Capitalizer</h3>
       <p class="text-center text-muted">Enter your name in lowercase to see it capitalized.</p>
 
@@ -124,7 +136,7 @@
 
 
 
-   
+
     <div class="converter-box text-center mb-4">
       <h3 class="text-center text-primary mb-3">BMI Calculator</h3>
       <p class="text-center text-muted">Enter your weight (kg) and height (meters) to calculate your BMI.</p>
@@ -143,8 +155,8 @@
 
       <p id="bmiResult" class="text-center fw-bold mt-4"></p>
     </div>
-  
-  
+
+
 
 
 
@@ -166,12 +178,12 @@
         <p id="resultarray" class="fw-bold text-center text-success"></p>
       </div>
     </div>
- 
 
 
 
 
- <div class="converter-box text-center mb-4">
+
+    <div class="converter-box text-center mb-4">
       <h3 class="text-center text-primary mb-4">Addition Calculator</h3>
 
       <div class="mb-3">
@@ -189,12 +201,8 @@
         <input type="text" id="result0" class="form-control" readonly>
       </div>
     </div>
-  
 
-    
-
-
- </div>
+  </div>
 
 
 
@@ -211,119 +219,148 @@
 
 
 
-        <script>
-            function convertToDays() {
-                const age = document.getElementById('ageInput').value;
-                const result = document.getElementById('result1');
-
-                if (age === "" || age <= 0) {
-                    result.innerHTML = " Please enter a valid age.";
-                    result.classList.replace('text-success', 'text-danger');
-                } else {
-                    const days = age * 365;
-                    result.innerHTML = ` Your age in days is <strong>${days}</strong> days.`;
-                    result.classList.replace('text-danger', 'text-success');
-                }
-            }
 
 
+  <script>
 
 
-            function convertToSeconds() {
-                const hours = document.getElementById('hourInput').value;
-                const result = document.getElementById('result2');
+    function convertToDays() {
+      const age = document.getElementById('ageInput').value;
+      const result = document.getElementById('result1');
 
-                if (hours === "" || hours <= 0) {
-                    result.innerHTML = " Please enter a valid number of hours.";
-                    result.classList.replace('text-success', 'text-danger');
-                } else {
-                    const seconds = hours * 3600;
-                    result.innerHTML = ` ${hours} hour(s) = <strong>${seconds}</strong> seconds.`;
-                    result.classList.replace('text-danger', 'text-success');
-                }
-            }
-
-
-
-
-
-
-
-            // Scenario 1: Next number in array
-            function findNextInArray() {
-                const arr = [3, 6, 9, 12, 15];
-                const num = parseFloat(document.getElementById('arrayInput').value);
-                const result = document.getElementById('arrayResult');
-
-                if (arr.includes(num)) {
-                    const index = arr.indexOf(num);
-                    if (index < arr.length - 1) {
-                        result.innerHTML = ` The next number after ${num} is <strong>${arr[index + 1]}</strong>.`;
-                        result.className = "text-success fw-bold";
-                    } else {
-                        result.innerHTML = " This is the last number in the array.";
-                        result.className = "text-danger fw-bold";
-                    }
-                } else {
-                    result.innerHTML = " Number not found in the array.";
-                    result.className = "text-danger fw-bold";
-                }
-            }
-
-            // Scenario 2: Next number for any user input
-            function findNextNumber() {
-                const value = document.getElementById('userInput').value;
-                const result = document.getElementById('userResult');
-
-                if (value === "") {
-                    result.innerHTML = " Please enter a number.";
-                    result.className = "text-danger fw-bold";
-                } else {
-                    const nextNum = parseFloat(value) + 1;
-                    result.innerHTML = ` The next number after ${value} is <strong>${nextNum}</strong>.`;
-                    result.className = "text-success fw-bold";
-                }
-            }
-
-
-
-
-
-function capitalizeName() {
-  const name = document.getElementById('nameInput').value.trim();
-  const result = document.getElementById('result');
-
-  if (name === "") {
-    result.innerHTML = " Please enter your name.";
-    result.className = "text-danger fw-bold text-center";
-  } else {
-    // Split name into words by spaces
-    const words = name.split(" ");
-    let capitalizedWords = [];
-
-    // Loop through each word and capitalize the first letter
-    for (let i = 0; i < words.length; i++) {
-      if (words[i].length > 0) {
-        let capitalizedWord = words[i][0].toUpperCase() + words[i].slice(1).toLowerCase();
-        capitalizedWords.push(capitalizedWord);
+      if (age === "" || age <= 0) {
+        result.innerHTML = " Please enter a valid age.";
+        result.classList.replace('text-success', 'text-danger');
+      } else {
+        const days = age * 365;
+        result.innerHTML = ` Your age in days is <strong>${days}</strong> days.`;
+        result.classList.replace('text-danger', 'text-success');
       }
     }
 
-    // Join all words back with spaces
-    const finalName = capitalizedWords.join(" ");
-
-    result.innerHTML = ` Your name is: <strong>${finalName}</strong>`;
-    result.className = "text-success fw-bold text-center";
-  }
-}
 
 
 
+    function convertToSeconds() {
+      const hours = document.getElementById('hourInput').value;
+      const result = document.getElementById('result2');
+
+      if (hours === "" || hours <= 0) {
+        result.innerHTML = " Please enter a valid number of hours.";
+        result.classList.replace('text-success', 'text-danger');
+      } else {
+        const seconds = hours * 3600;
+        result.innerHTML = ` ${hours} hour(s) = <strong>${seconds}</strong> seconds.`;
+        result.classList.replace('text-danger', 'text-success');
+      }
+    }
 
 
 
 
-function calculateBMI() {
+
+
+
+    // Scenario 1: Next number in array
+    function findNextInUserArray() {
+      const arrayInput = document.getElementById('arrayInput').value.trim();
+      const numberInput = document.getElementById('numberInput').value.trim();
+      const result = document.getElementById('resultfinal');
+
+      // Validate inputs
+      if (arrayInput === "") {
+        result.innerHTML = " Please enter an array first.";
+        result.className = "text-danger fw-bold";
+        return;
+      }
+
+      // Convert user input into numeric array
+      const arr = arrayInput.split(',').map(num => parseFloat(num.trim())).filter(num => !isNaN(num));
+
+      if (arr.length === 0) {
+        result.innerHTML = "Invalid array input. Please use numbers separated by commas.";
+        result.className = "text-danger fw-bold";
+        return;
+      }
+
+      if (numberInput === "") {
+        result.innerHTML = "Please enter a number to search.";
+        result.className = "text-danger fw-bold";
+        return;
+      }
+
+      const num = parseFloat(numberInput);
+
+      if (arr.includes(num)) {
+        const index = arr.indexOf(num);
+        if (index < arr.length - 1) {
+          result.innerHTML = `The next number after <strong>${num}</strong> is <strong>${arr[index + 1]}</strong>.`;
+          result.className = "text-success fw-bold";
+        } else {
+          result.innerHTML = " This is the last number in the array.";
+          result.className = "text-warning fw-bold";
+        }
+      } else {
+        result.innerHTML = " Number not found in the entered array.";
+        result.className = "text-danger fw-bold";
+      }
+    }
+
+
+    // Scenario 2: Next number for any user input
+    function findNextNumber() {
+      const value = document.getElementById('userInput').value;
+      const result = document.getElementById('userResult');
+
+      if (value === "") {
+        result.innerHTML = " Please enter a number.";
+        result.className = "text-danger fw-bold";
+      } else {
+        const nextNum = parseFloat(value) + 1;
+        result.innerHTML = ` The next number after ${value} is <strong>${nextNum}</strong>.`;
+        result.className = "text-success fw-bold";
+      }
+    }
+
+
+
+
+
+    function capitalizeName() {
+      const name = document.getElementById('nameInput').value.trim();
+      const result = document.getElementById('result');
+
+      if (name === "") {
+        result.innerHTML = " Please enter your name.";
+        result.className = "text-danger fw-bold text-center";
+      } else {
+        // Split name into words by spaces
+        const words = name.split(" ");
+        let capitalizedWords = [];
+
+        // Loop through each word and capitalize the first letter
+        for (let i = 0; i < words.length; i++) {
+          if (words[i].length > 0) {
+            let capitalizedWord = words[i][0].toUpperCase() + words[i].slice(1).toLowerCase();
+            capitalizedWords.push(capitalizedWord);
+          }
+        }
+
+        // Join all words back with spaces
+        const finalName = capitalizedWords.join(" ");
+
+        result.innerHTML = ` Your name is: <strong>${finalName}</strong>`;
+        result.className = "text-success fw-bold text-center";
+      }
+    }
+
+
+
+
+
+
+
+    function calculateBMI() {
       const weight = parseFloat(document.getElementById('weight').value);
       const height = parseFloat(document.getElementById('height').value);
       const result = document.getElementById('bmiResult');
@@ -354,7 +391,7 @@ function calculateBMI() {
 
 
 
-let randomArray = [];
+    let randomArray = [];
 
     // Function to generate a random array of numbers
     function generateArray() {
@@ -388,7 +425,7 @@ let randomArray = [];
 
 
 
-const num1 = document.getElementById("num1");
+    const num1 = document.getElementById("num1");
     const num2 = document.getElementById("num2");
     const result = document.getElementById("result0");
 
@@ -421,11 +458,11 @@ const num1 = document.getElementById("num1");
 
 
 
-    
 
-        </script>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
