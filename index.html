@@ -309,18 +309,19 @@
 
     // Scenario 2: Next number for any user input
     function findNextNumber() {
-      const value = document.getElementById('userInput').value;
-      const result = document.getElementById('userResult');
+  const value = document.getElementById('userInput').value;
+  const result = document.getElementById('userResult');
 
-      if (value === "") {
-        result.innerHTML = " Please enter a number.";
-        result.className = "text-danger fw-bold";
-      } else {
-        const nextNum = parseFloat(value) + 1;
-        result.innerHTML = ` The next number after ${value} is <strong>${nextNum}</strong>.`;
-        result.className = "text-success fw-bold";
-      }
-    }
+  if (value === "") {
+    result.innerHTML = " Please enter a number.";
+    result.className = "text-danger fw-bold";
+  } else {
+    const nextNum = (parseFloat(value) + 0.1).toFixed(1); // add 0.1 instead of 1
+    result.innerHTML = ` The next number after ${value} is <strong>${nextNum}</strong>.`;
+    result.className = "text-success fw-bold";
+  }
+}
+
 
 
 
